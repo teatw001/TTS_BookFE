@@ -1,0 +1,31 @@
+<div class="px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8">
+  <div class="text-center">
+    <h2 class="text-xl font-bold text-gray-900 sm:text-3xl">Flash Sale!</h2>
+
+    <p class="max-w-md mx-auto mt-4 text-gray-500">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque
+      praesentium cumque iure dicta incidunt est ipsam, officia dolor fugit
+      natus?
+    </p>
+    <nz-demo-statistic-countdown />
+  </div>
+</div>
+
+<div
+  class="grid grid-cols-1 gap-8 lg:grid-cols-4 lg:gap-8 transition-transform duration-500 ease-in-out"
+>
+  <div
+    class="transform translate-x-0"
+    *ngFor="
+      let product of products.slice(currentIndex, currentIndex + 4);
+      let i = index
+    "
+  >
+    <app-product [data]="product" />
+  </div>
+</div>
+
+<div class="text-center mt-4">
+  <button class="btn btn-primary showcontent" (click)="showPrev()">Prev</button>
+  <button class="btn btn-primary showcontent" (click)="showNext()">Next</button>
+</div>
