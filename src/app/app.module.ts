@@ -44,6 +44,8 @@ import { MenuComponent } from './components/Clients/search/menu/menu.component';
 import { NzDemoDropdownEventComponent } from './components/Antd/dropdown';
 import { LimitWordsPipe } from './components/Clients/pipesplice';
 import { CurrencyFormatPipe } from './components/Clients/pipeformatprice';
+import { DetailComponent } from './pages/Clients/detail/detail.component';
+import { BooksComponent } from './pages/Clients/books/books.component';
 const icons = [BellOutline, UserOutline];
 @NgModule({
   declarations: [
@@ -73,6 +75,8 @@ const icons = [BellOutline, UserOutline];
     MenuComponent,
     LimitWordsPipe,
     NzDemoDropdownEventComponent,
+    DetailComponent,
+    BooksComponent,
   ],
 
   imports: [
