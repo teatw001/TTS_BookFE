@@ -17,12 +17,12 @@ export class BooksService {
   deleteProduct(id: number | string): Observable<IProduct> {
     return this.http.delete<IProduct>('http://localhost:8080/product/' + id);
   }
-  addProduct(product: IProduct): Observable<IProduct> {
+  addProduct(product: any): Observable<IProduct> {
     return this.http.post<IProduct>('http://localhost:8080/product', product);
   }
   updateProduct(product: IProduct): Observable<IProduct> {
     return this.http.put<IProduct>(
-      `http://localhost:8080/product/${product.id}`,
+      `http://localhost:8080/product/${product._id}`,
       product
     );
   }

@@ -5,15 +5,21 @@ import { PageNotFoundComponent } from './components/Clients/page-not-found/page-
 import { LayoutUserComponent } from './Layout/Clients/layout-user/layout-user.component';
 import { LayoutAdminComponent } from './Layout/Clients/layout-admin/layout-admin.component';
 import { DetailComponent } from './pages/Clients/detail/detail.component';
+import { BooksComponent } from './pages/Clients/books/books.component';
+import { ListProductComponent } from './components/Admin/listproduct';
+import { ProductAddComponent } from './components/Admin/addproduct';
 
 const routes: Routes = [
   {
     path: '',
-
     component: LayoutUserComponent,
-    children: [{ path: '', component: HomepageComponent }],
+    children: [
+      { path: '', component: HomepageComponent },
+      { path: 'books', component: BooksComponent },
+      { path: 'books-detail/:id', component: DetailComponent },
+    ],
   },
-  { path: 'books-detail/:id', component: DetailComponent },
+
   // { path: 'signup', component: SignupComponent },
   // { path: 'signin', component: SigninComponent },
   {
@@ -21,8 +27,8 @@ const routes: Routes = [
     component: LayoutAdminComponent,
     children: [
       // { path: 'dashboard', component: DashboardComponent },
-      // { path: 'product', component: ManageProductComponent },
-      // { path: 'product/add', component: ProductAddComponent },
+      { path: 'product', component: ListProductComponent },
+      { path: 'product/add', component: ProductAddComponent },
       // { path: 'product/:id/edit', component: ProductEditComponent },
     ],
   },

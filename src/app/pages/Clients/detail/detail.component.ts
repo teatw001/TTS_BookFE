@@ -10,6 +10,7 @@ import { IProduct } from 'src/app/interfaces/model';
 })
 export class DetailComponent {
   form!: FormGroup;
+
   product!: IProduct;
   constructor(
     private ps: BooksService,
@@ -23,5 +24,11 @@ export class DetailComponent {
         this.product = data;
       });
     });
+  }
+  displayedWords = 80; // Số từ được hiển thị ban đầu
+  additionalWords = 30; // Số từ thêm mỗi lần khi ấn "Xem thêm"
+
+  showMore(): void {
+    this.displayedWords += this.additionalWords;
   }
 }

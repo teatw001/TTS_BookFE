@@ -8,7 +8,9 @@ import { Component } from '@angular/core';
     </a>
     <nz-dropdown-menu #menu="nzDropdownMenu">
       <ul nz-menu>
-        <li nz-menu-item (click)="log('1st menu item')">1st menu item</li>
+        <li nz-menu-item (click)="log('1st menu item')">
+          <a routerLink="/books">Books</a>
+        </li>
         <li nz-menu-item (click)="log('2nd menu item')">2nd menu item</li>
         <li nz-menu-item (click)="log('3rd menu item')">3rd menu item</li>
       </ul>
